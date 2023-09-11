@@ -1,9 +1,7 @@
+"use client"
 import { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
-
-mapboxgl.accessToken =
-  "pk.eyJ1IjoibG91aXNrbm9sbGUiLCJhIjoiY2xhMTh0OXV2MDU3NTNvbDUzenNxMGhyMiJ9.1A_ch-Oku2ehIIJ6uoD_iQ";
 
 const HomeMap = () => {
   const [lng, setLng] = useState(-99.4805);
@@ -11,10 +9,11 @@ const HomeMap = () => {
   const [zoom, setZoom] = useState(3.1);
 
   const mapContainer = useRef<any>(null);
-  const map = useRef(null);
+  const map = useRef<mapboxgl.Map | any>(null);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
+    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_GL_ACCESS_TOKEN ?? '';
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/outdoors-v11",
@@ -33,9 +32,7 @@ const HomeMap = () => {
   });
 
   return (
-  <main>
-    <div className="map-container shadow-xl" ref={mapContainer} />;
-  </main>
+    <div className="map-container shadow-xl" ref={mapContainer} />
   );
 };
 

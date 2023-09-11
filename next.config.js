@@ -9,11 +9,16 @@ const nextConfig = {
     return [
       {
         source: "/github",
-        destination: "https://github.com/steven-tey/precedent",
+        destination: "https://github.com/louieknolle/venture-splorin",
         permanent: false,
       },
     ];
   },
 };
 
-module.exports = nextConfig;
+module.exports = {
+  nextConfig,
+  env: {
+    NEXT_PUBLIC_MAPBOX_GL_ACCESS_TOKEN: process.env.NEXT_PUBLIC_MAPBOX_GL_ACCESS_TOKEN,
+  },
+};

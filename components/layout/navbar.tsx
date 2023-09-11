@@ -32,7 +32,7 @@ export default function NavBar({ session }: { session: Session | null }) {
             ></Image> */}
             <p>'Venture 'Splorin</p>
           </Link>
-          <div className='flex justify-between items-center w-1/2'>
+          <div className={`flex justify-between items-center ${session ? 'w-1/2' : 'w-1/4'}`}>
             <Link href="/popular">Popular Treks</Link>
             <Link href="/pack-lists">Packing Lists</Link>
             {session ? (
