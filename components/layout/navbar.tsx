@@ -23,18 +23,24 @@ export default function NavBar({ session }: { session: Session | null }) {
       >
         <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
           <Link href="/" className="flex items-center font-display text-2xl">
-            <Image
+            {/* <Image
               src="/logo.png"
               alt="Precedent logo"
               width="30"
               height="30"
               className="mr-2 rounded-sm"
-            ></Image>
-            <p>Precedent</p>
+            ></Image> */}
+            <p>'Venture 'Splorin</p>
           </Link>
-          <div>
+          <div className='flex justify-between items-center w-1/2'>
+            <Link href="/popular">Popular Treks</Link>
+            <Link href="/pack-lists">Packing Lists</Link>
             {session ? (
-              <UserDropdown session={session} />
+              <>
+                <Link href="/saved-treks">Saved Treks</Link>
+                <Link href="/gear">Gear</Link>
+                <UserDropdown session={session} />
+              </>
             ) : (
               <button
                 className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
