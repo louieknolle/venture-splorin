@@ -3,7 +3,7 @@ import { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const HomeMap = () => {
+const Map = () => {
   const [lng, setLng] = useState(-99.4805);
   const [lat, setLat] = useState(41.1983);
   const [zoom, setZoom] = useState(3.1);
@@ -33,6 +33,12 @@ const HomeMap = () => {
 
   return (
     <div className="map-container shadow-xl" ref={mapContainer} />
+  );
+};
+
+const HomeMap = () => {
+  return (
+    <Map />
   );
 };
 

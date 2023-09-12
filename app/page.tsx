@@ -27,7 +27,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="relative z-10 w-full max-w-xl px-5 xl:px-0">
+      <div className="static md:fixed bottom-0 w-full h-auto md:h-[600px]">
         <HomeMap />
         {/* <a
           href="https://twitter.com/steventey/status/1613928948915920896"
