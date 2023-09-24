@@ -8,6 +8,8 @@ import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
 import HomeMap from '@/components/home/home-map';
 
+
+
 export default async function Home() {
   // const { stargazers_count: stars } = await fetch(
   //   "https://api.github.com/repos/steven-tey/precedent",
@@ -24,10 +26,11 @@ export default async function Home() {
   // )
   //   .then((res) => res.json())
   //   .catch((e) => console.log(e));
-
+  
   return (
     <>
       <div className="static md:fixed bottom-0 w-full h-auto md:h-[600px]">
+        
         <HomeMap />
         {/* <a
           href="https://twitter.com/steventey/status/1613928948915920896"
